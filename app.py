@@ -1,37 +1,23 @@
 from flask import Flask, render_template, request
-import requests, os
+import requests
+import os
 
 app = Flask(__name__)
 
-NEWS_API_KEY = os.getenv("NEWS_API_KEY")
-BASE_URL = "https://newsapi.org/v2/top-headlines"
+# Get API key from environment variable
+NEWS_API_KEY = os.getenv("NEWS_API_KEY", "19baa4998e4542c38b612520bc7fa33d")
 
-CATEGORIES = ["technology", "business", "sports", "health"]
+# Categories we will support
+CATEGORIES = ["business", "technology", "sports", "health", "entertainment", "science"]
 
 @app.route("/", methods=["GET", "POST"])
-def index():
-    category = "technology"
-    page = int(request.args.get("page", 1))  # default page 1
-
-    if request.method == "POST":
-        category = request.form.get("category", "technology")
-        page = 1  # reset page when category changes
-
-    params = {
-        "apiKey": NEWS_API_KEY,
-        "country": "us",
-        "category": category,
-        "pageSize": 6,   # 6 per page
-        "page": page
-    }
-    response = requests.get(BASE_URL, params=params)
+def home():
+    category = request.form.get("category", "technology")  # default = tech
+    url = f"https://newsapi.org/v2/top-headlines?country=us&category={category}&apiKey={NEWS_API_KEY}"
+    response = requests.get(url)
     data = response.json()
     articles = data.get("articles", [])
+    return render_template("index.html", articles=articles, categories=CATEGORIES, active=category)
 
-    return render_template(
-        "index.html",
-        categories=CATEGORIES,
-        articles=articles,
-        active=category,
-        page=page
-    )
+if __name__ == "__main__":
+    app.run(debug=True)
