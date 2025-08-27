@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 # Get API key from environment variable
-NEWS_API_KEY = os.getenv("NEWS_API_KEY", "19baa4998e4542c38b612520bc7fa33d")
+NEWS_API_KEY = os.getenv("NEWS_API_KEY", "your-api-key")
 
 # Categories we will support
 CATEGORIES = ["business", "technology", "sports", "health", "entertainment", "science"]
