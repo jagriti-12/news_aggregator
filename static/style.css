@@ -21,7 +21,7 @@ body {
 
 /* Footer */
 .footer-custom {
-  background: #3f37c9;
+  background: #545454;
   color: #eee;
 }
 .footer-custom a {
@@ -78,5 +78,5 @@ footer a {
   transition: color 0.3s ease;
 }
 footer a:hover {
-  color: #0d6efd; /* Bootstrap primary blue */
+  color: #3f3f3f; /* Bootstrap primary blue */
 }
