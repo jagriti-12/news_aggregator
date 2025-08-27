@@ -1,0 +1,76 @@
+/* General */
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9f9fb;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Navbar */
+.custom-navbar {
+  background: linear-gradient(90deg, #6c63ff, #3f37c9);
+}
+.custom-navbar .navbar-brand {
+  color: white !important;
+  font-size: 1.25rem;
+}
+.custom-navbar .toggle-btn {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+/* Footer */
+.footer-custom {
+  background: #3f37c9;
+  color: #eee;
+}
+.footer-custom a {
+  color: #eee;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-custom a:hover {
+  color: #ffdd57;
+}
+
+/* Category buttons */
+.btn-custom {
+  border: 1px solid #6c63ff;
+  color: #6c63ff;
+  background: transparent;
+  transition: all 0.3s;
+}
+.btn-custom:hover {
+  background: #6c63ff;
+  color: white;
+}
+.btn-custom-active {
+  background: #6c63ff;
+  color: white;
+  border: 1px solid #6c63ff;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #1e1e2f;
+  color: #e4e4e4;
+}
+.dark-mode .card {
+  background-color: #2a2a3d;
+  color: #ddd;
+}
+.dark-mode .custom-navbar {
+  background: linear-gradient(90deg, #22223b, #4a4e69);
+}
+.dark-mode .footer-custom {
+  background: #22223b;
+}
+.dark-mode .btn-custom {
+  border: 1px solid #bbb;
+  color: #ddd;
+}
+.dark-mode .btn-custom-active {
+  background: #444;
+  color: #fff;
+  border: 1px solid #555;
+}
